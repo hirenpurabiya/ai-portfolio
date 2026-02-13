@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { id: string } }) {
 function StatusBadge({ status }: { status: string }) {
   const styles: Record<string, string> = {
     live: "bg-green-500/10 text-green-400 border-green-500/20",
-    "in-progress": "bg-yellow-500/10 text-yellow-400 border-yellow-500/20",
+    "in-progress": "bg-amber-500/10 text-amber-400 border-amber-500/20",
     planned: "bg-zinc-500/10 text-zinc-400 border-zinc-500/20",
   };
   const labels: Record<string, string> = {
@@ -40,6 +40,21 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
+function SectionCard({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className="mb-8">
+      <h2 className="text-lg font-semibold mb-4 tracking-tight">{title}</h2>
+      <div className="glass rounded-2xl p-6">{children}</div>
+    </section>
+  );
+}
+
 export default function ProjectPage({ params }: { params: { id: string } }) {
   const project = projects.find((p) => p.id === params.id);
   if (!project) notFound();
@@ -47,11 +62,11 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
   return (
     <div className="min-h-screen">
       {/* Header */}
-      <header className="border-b border-border">
-        <div className="max-w-4xl mx-auto px-6 py-6 flex items-center justify-between">
+      <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/5">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link
             href="/"
-            className="text-text-tertiary hover:text-foreground transition-colors text-sm flex items-center gap-2"
+            className="text-text-tertiary hover:text-foreground transition-colors duration-300 text-sm flex items-center gap-2"
           >
             <svg
               className="w-4 h-4"
@@ -68,13 +83,13 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
             </svg>
             Back to Portfolio
           </Link>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             {project.github && (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-border text-sm hover:border-accent/40 transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-white/20 transition-all duration-300"
               >
                 <svg
                   className="w-4 h-4"
@@ -91,7 +106,7 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-accent text-white text-sm hover:bg-accent-hover transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-sm hover:bg-accent-hover transition-colors duration-300"
               >
                 <svg
                   className="w-4 h-4"
@@ -113,99 +128,115 @@ export default function ProjectPage({ params }: { params: { id: string } }) {
         </div>
       </header>
 
-      <main className="max-w-4xl mx-auto px-6 py-12">
-        {/* Title */}
-        <div className="mb-10">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-text-tertiary font-mono text-sm">
+      {/* Hero */}
+      <div className="hero-gradient pt-28 pb-16 sm:pt-32 sm:pb-20">
+        <main className="max-w-5xl mx-auto px-6">
+          <div className="flex items-center gap-3 mb-5">
+            <span className="text-text-tertiary font-mono text-xs tracking-wider">
               #{project.number}
             </span>
             <StatusBadge status={project.status} />
           </div>
-          <h1 className="text-4xl font-bold tracking-tight mb-3">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             {project.title}
           </h1>
           <p className="text-text-secondary text-lg leading-relaxed max-w-2xl">
             {project.description}
           </p>
+        </main>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-5xl mx-auto px-6 py-12">
+        {/* Architecture */}
+        <SectionCard title="Architecture">
+          <pre className="text-sm text-text-secondary font-mono overflow-x-auto leading-relaxed">
+            <code>{project.architecture}</code>
+          </pre>
+          <p className="text-text-tertiary text-xs mt-4">
+            Rendered as a Mermaid diagram when viewed on GitHub.
+          </p>
+        </SectionCard>
+
+        {/* Tech Stack + AI Concepts + LLMs in a grid */}
+        <div className="grid gap-6 sm:grid-cols-3 mb-8">
+          <section>
+            <h2 className="text-lg font-semibold mb-4 tracking-tight">
+              Tech Stack
+            </h2>
+            <div className="glass rounded-2xl p-5">
+              <div className="flex flex-wrap gap-2">
+                {project.techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold mb-4 tracking-tight">
+              AI Concepts
+            </h2>
+            <div className="glass rounded-2xl p-5">
+              <div className="flex flex-wrap gap-2">
+                {project.aiConcepts.map((concept) => (
+                  <span
+                    key={concept}
+                    className="px-3 py-1.5 rounded-lg bg-accent/10 text-accent border border-accent/20 text-sm"
+                  >
+                    {concept}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-lg font-semibold mb-4 tracking-tight">
+              LLMs / Models
+            </h2>
+            <div className="glass rounded-2xl p-5">
+              <div className="flex flex-wrap gap-2">
+                {project.llms.map((llm) => (
+                  <span
+                    key={llm}
+                    className="px-3 py-1.5 rounded-lg bg-accent-purple/10 text-accent-purple border border-accent-purple/20 text-sm font-medium"
+                  >
+                    {llm}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
 
-        {/* Architecture */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Architecture</h2>
-          <div className="rounded-xl border border-border bg-surface p-6">
-            <pre className="text-sm text-text-secondary font-mono overflow-x-auto">
-              <code>{project.architecture}</code>
-            </pre>
-            <p className="text-text-tertiary text-xs mt-3">
-              Rendered as a Mermaid diagram when viewed on GitHub.
-            </p>
-          </div>
-        </section>
-
-        {/* Tech Stack */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Tech Stack</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 rounded-lg bg-surface border border-border text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* AI Concepts */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">AI Concepts</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.aiConcepts.map((concept) => (
-              <span
-                key={concept}
-                className="px-3 py-1.5 rounded-lg bg-accent/10 text-accent border border-accent/20 text-sm"
-              >
-                {concept}
-              </span>
-            ))}
-          </div>
-        </section>
-
-        {/* LLMs Used */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">LLMs / Models</h2>
-          <div className="flex flex-wrap gap-2">
-            {project.llms.map((llm) => (
-              <span
-                key={llm}
-                className="px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20 text-sm font-medium"
-              >
-                {llm}
-              </span>
-            ))}
-          </div>
-        </section>
-
         {/* Key Features */}
-        <section className="mb-10">
-          <h2 className="text-xl font-semibold mb-4">Key Features</h2>
-          <ul className="space-y-3">
+        <SectionCard title="Key Features">
+          <ul className="space-y-4">
             {project.highlights.map((highlight, i) => (
               <li key={i} className="flex items-start gap-3">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                <span className="text-text-secondary">{highlight}</span>
+                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
+                <span className="text-text-secondary leading-relaxed">
+                  {highlight}
+                </span>
               </li>
             ))}
           </ul>
-        </section>
-      </main>
+        </SectionCard>
+      </div>
 
       {/* Footer */}
-      <footer className="border-t border-border">
-        <div className="max-w-4xl mx-auto px-6 py-8 flex items-center justify-between text-text-tertiary text-sm">
-          <Link href="/" className="hover:text-foreground transition-colors">
+      <footer className="border-t border-white/5">
+        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
+          <Link
+            href="/"
+            className="hover:text-foreground transition-colors duration-300"
+          >
             &larr; Back to Portfolio
           </Link>
           <span>&copy; {new Date().getFullYear()} Hiren Purabiya</span>
