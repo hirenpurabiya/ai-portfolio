@@ -43,11 +43,26 @@ models/
 # Data files
 *.csv
 *.parquet
-data/
+/data/
 
 # Logs
 *.log
 logs/
+
+# Private docs - NEVER commit
+docs/PRIVATE_README.md
+
+# OpenAI interview prep files
+OpenAI_*.txt
+OpenAI_*.md
+audit_*.json
+audit_*.py
+pptx_text.txt
+
+# Next.js
+site/.next/
+site/out/
+site/node_modules/
 
 # Build
 dist/
