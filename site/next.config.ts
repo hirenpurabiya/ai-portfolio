@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: isProd ? "/ai-portfolio" : "",
   assetPrefix: isProd ? "/ai-portfolio/" : "",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
