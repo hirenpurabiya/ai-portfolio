@@ -8,8 +8,9 @@ export function generateStaticParams() {
   }));
 }
 
-export function generateMetadata({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
   if (!project) return { title: "Project Not Found" };
   return {
     title: `${project.title} | Hiren Purabiya`,
@@ -55,8 +56,9 @@ function SectionCard({
   );
 }
 
-export default function ProjectPage({ params }: { params: { id: string } }) {
-  const project = projects.find((p) => p.id === params.id);
+export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const project = projects.find((p) => p.id === id);
   if (!project) notFound();
 
   return (
