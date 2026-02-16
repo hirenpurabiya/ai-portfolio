@@ -16,36 +16,51 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: "arxiv-paper-finder",
+    id: "arxiv-scholar-ai",
     number: "01",
-    title: "ArXiv Paper Finder",
+    title: "ArXiv Scholar AI",
     tagline:
-      "AI-powered chatbot that searches and summarizes research papers from arXiv.",
+      "AI-powered research paper discovery and summarization with a modern full-stack web app.",
     description:
-      "Ask natural language questions and instantly discover relevant arXiv papers with AI-generated summaries, follow-up conversation, and filtering by date, category, and relevance.",
-    status: "in-progress",
-    github: "https://github.com/hirenpurabiya/arxiv-paper-finder",
-    demo: undefined,
-    techStack: ["Python 3.11+", "Gradio", "Cloudflare Pages", "Cloudflare Workers"],
-    aiConcepts: [
-      "Retrieval-Augmented Generation (RAG)",
-      "Tool Use / Function Calling",
-      "Prompt Engineering",
-      "API Orchestration",
+      "Search arXiv's database of 2M+ academic papers on any topic and get concise AI-powered summaries using Claude. Features a beautiful Next.js frontend, a Python FastAPI backend, and real-time paper search with direct PDF links.",
+    status: "live",
+    github: "https://github.com/hirenpurabiya/arxiv-scholar-ai",
+    demo: "https://arxiv-scholar-ai.vercel.app",
+    techStack: [
+      "Next.js 16",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "Vercel",
+      "Render",
     ],
-    llms: ["OpenAI GPT-4o"],
+    aiConcepts: [
+      "AI Summarization",
+      "Tool Use / Function Calling",
+      "API Orchestration",
+      "Prompt Engineering",
+    ],
+    llms: ["Anthropic Claude"],
     architecture: `flowchart LR
-    U[User Query] --> CB[Chatbot UI]
-    CB --> API[API Layer]
-    API --> AX[arXiv Search API]
+    U[User] --> FE[Next.js Frontend]
+    FE --> API[FastAPI Backend]
+    API --> AX[arXiv API]
     AX --> PROC[Result Processing]
-    PROC --> LLM[LLM - Summarize & Answer]
-    LLM --> CB`,
+    API --> CL[Claude API]
+    CL --> SUM[AI Summary]
+    PROC --> FE
+    SUM --> FE`,
     highlights: [
-      "Natural language paper search across arXiv",
-      "AI-generated summaries of paper abstracts",
-      "Multi-turn conversation for follow-up questions",
-      "Filter by date, category, and relevance",
+      "Search arXiv's 2M+ papers by any topic with smart relevance ranking",
+      "AI-powered summaries using Claude -- concise, readable explanations of complex research",
+      "Direct PDF download links for every paper",
+      "Topic-based organization -- articles saved and grouped for easy revisiting",
+      "Full REST API backend with interactive Swagger documentation",
+      "Modern, responsive UI built with Next.js and Tailwind CSS",
+      "Learning journal documenting CS/AI/ML concepts explained simply",
     ],
   },
 ];
