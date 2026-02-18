@@ -242,7 +242,7 @@ export default function Home() {
             <br />
             <span className="gradient-text">AI</span>
           </h2>
-          <p className="text-text-secondary text-lg sm:text-xl max-w-6xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
+          <p className="text-text-secondary text-lg sm:text-xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
             A portfolio of hands-on projects exploring the latest GenAI technologies — MCPs, A2A, Agent Skills, AI Agents, LLMs, RAG, Transformers, and more.
           </p>
           <a
