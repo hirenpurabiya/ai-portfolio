@@ -124,7 +124,7 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-4 flex items-center justify-between">
+        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent to-accent-purple flex items-center justify-center text-white text-xs font-bold">
               HP
@@ -236,13 +236,13 @@ export default function Home() {
 
       {/* Hero */}
       <section className="hero-gradient relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-32">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12">
+        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up">
             Building With
             <br />
             <span className="gradient-text">AI</span>
           </h2>
-          <p className="text-text-secondary text-lg sm:text-xl max-w-3xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
+          <p className="text-text-secondary text-lg sm:text-xl max-w-4xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
             A portfolio of hands-on projects exploring the latest GenAI technologies — MCPs, A2A, Agent Skills, AI Agents, LLMs, RAG, Transformers, and more.
           </p>
           <a
@@ -268,7 +268,7 @@ export default function Home() {
       </section>
 
       {/* Projects */}
-      <section id="projects" className="max-w-7xl mx-auto px-8 lg:px-12 pb-24 lg:pb-32">
+      <section id="projects" className="w-full mx-auto px-8 lg:px-16 xl:px-24 pb-24 lg:pb-32">
         <h3 className="text-2xl sm:text-3xl font-semibold mb-10 tracking-tight animate-fade-in-up animation-delay-600">
           Projects
         </h3>
@@ -281,7 +281,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-8 lg:px-12 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
+        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
           <span>&copy; {new Date().getFullYear()} Hiren Purabiya</span>
           <span>Hosted on GitHub Pages</span>
         </div>
