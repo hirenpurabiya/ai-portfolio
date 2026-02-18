@@ -142,7 +142,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             {project.title}
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed max-w-5xl">
+          <p className="text-text-secondary text-lg leading-relaxed">
             {project.description}
           </p>
         </main>
