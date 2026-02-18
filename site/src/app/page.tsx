@@ -238,14 +238,14 @@ export default function Home() {
       <section className="hero-gradient relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-32">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up">
-            Building Production-Grade
+            Building With
             <br />
-            <span className="gradient-text">AI Systems</span>
+            <span className="gradient-text">AI</span>
           </h2>
           <p className="text-text-secondary text-lg sm:text-xl max-w-2xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
-            A curated collection of projects in LLMs, RAG, AI Agents, and
-            enterprise AI — each with architecture, live demos, and measurable
-            outcomes.
+            A portfolio of hands-on projects exploring the latest GenAI
+            technologies — MCPs, A2A, Agent Skills, AI Agents, LLMs, RAG, and
+            Transformers.
           </p>
           <a
             href="#projects"
