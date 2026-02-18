@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     <div className="min-h-screen">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/5">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
           <Link
             href="/"
             className="text-text-tertiary hover:text-foreground transition-colors duration-300 text-sm flex items-center gap-2"
@@ -132,7 +132,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       {/* Hero */}
       <div className="hero-gradient pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <main className="max-w-5xl mx-auto px-6">
+        <main className="w-full mx-auto px-8 lg:px-16 xl:px-24">
           <div className="flex items-center gap-3 mb-5">
             <span className="text-text-tertiary font-mono text-xs tracking-wider">
               #{project.number}
@@ -142,14 +142,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             {project.title}
           </h1>
-          <p className="text-text-secondary text-lg leading-relaxed max-w-2xl">
+          <p className="text-text-secondary text-lg leading-relaxed max-w-5xl">
             {project.description}
           </p>
         </main>
       </div>
 
       {/* Content */}
-      <div className="max-w-5xl mx-auto px-6 py-12">
+      <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-12">
         {/* Architecture */}
         <SectionCard title="Architecture">
           <pre className="text-sm text-text-secondary font-mono overflow-x-auto leading-relaxed">
@@ -234,7 +234,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       {/* Footer */}
       <footer className="border-t border-white/5">
-        <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
+        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
           <Link
             href="/"
             className="hover:text-foreground transition-colors duration-300"
