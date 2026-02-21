@@ -65,7 +65,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
     <div className="min-h-screen">
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 glass-header border-b border-white/5">
-        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between">
+        <div className="w-full max-w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 py-4 flex items-center justify-between min-w-0">
           <Link
             href="/"
             className="text-text-tertiary hover:text-foreground transition-colors duration-300 text-sm flex items-center gap-2"
@@ -91,10 +91,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm hover:border-white/20 transition-all duration-300"
+                className="inline-flex items-center justify-center gap-2 w-[7.5rem] px-4 py-2 rounded-full glass text-sm hover:border-white/20 transition-all duration-300"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -108,10 +108,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 href={project.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent text-white text-sm hover:bg-accent-hover transition-colors duration-300"
+                className="inline-flex items-center justify-center gap-2 w-[7.5rem] px-4 py-2 rounded-full bg-accent text-white text-sm hover:bg-accent-hover transition-colors duration-300"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -132,7 +132,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       {/* Hero */}
       <div className="hero-gradient pt-28 pb-16 sm:pt-32 sm:pb-20">
-        <main className="w-full mx-auto px-8 lg:px-16 xl:px-24">
+        <main className="w-full max-w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 min-w-0">
           <div className="flex items-center gap-3 mb-5">
             <span className="text-text-tertiary font-mono text-xs tracking-wider">
               #{project.number}
@@ -149,7 +149,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       </div>
 
       {/* Content */}
-      <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-12">
+      <div className="w-full max-w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 py-12 min-w-0">
         {/* Architecture */}
         <SectionCard title="Architecture">
           <pre className="text-sm text-text-secondary font-mono overflow-x-auto leading-relaxed">
@@ -234,7 +234,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
 
       {/* Footer */}
       <footer className="border-t border-white/5">
-        <div className="w-full mx-auto px-8 lg:px-16 xl:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm">
+        <div className="w-full max-w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-text-tertiary text-sm min-w-0">
           <Link
             href="/"
             className="hover:text-foreground transition-colors duration-300"
