@@ -63,7 +63,7 @@ export const projects: Project[] = [
       "Real MCP client-server -- agent connects via SSE, discovers tools dynamically, executes through MCP protocol",
       "Agentic loop -- LLM decides which tools to call, evaluates results, loops up to 10 steps",
       "Prompt engineering -- system instruction forces tool usage; MCP prompt templates discoverable by any client",
-      "Production resilience -- model fallback across 3 Gemini variants, rate limit detection, arXiv retry with backoff",
+      "Production resilience -- retry with backoff on rate limits, rate limit detection, arXiv retry with exponential delay",
       "Live reasoning UI -- users see tool calls and results streamed in real time via SSE",
       "LLM-agnostic -- currently Gemini free tier; swappable to Claude, GPT, Llama, Bedrock, or any LLM",
       "Any MCP client can connect -- Claude Desktop, Cursor, custom agents all work out of the box",
