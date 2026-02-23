@@ -1,55 +1,21 @@
-# AI/ML Portfolio - Hiren Purabiya
+# AI Portfolio - Hiren Purabiya
 
-A curated collection of AI, Machine Learning, and Generative AI projects demonstrating expertise in LLMs, RAG systems, AI Agents, MLOps, and production-grade AI systems.
+A portfolio of AI projects demonstrating expertise in MCP (Model Context Protocol), agentic AI, tool calling, and full-stack AI applications.
 
 ## Featured Projects
 
-| # | Project | Description | Tech Stack | Links |
-|---|---------|-------------|------------|-------|
-| 01 | **ArXiv Paper Finder** | AI chatbot that searches and summarizes arXiv research papers | OpenAI GPT-4o, arXiv API, RAG | [GitHub](https://github.com/hirenpurabiya/arxiv-paper-finder) · [Details](./projects/01-arxiv-paper-finder/) |
-
-## Skills & Technologies
-
-### AI/ML
-- Large Language Models (LLMs)
-- Retrieval-Augmented Generation (RAG)
-- AI Agents & Tool Use
-- Prompt Engineering
-- MLOps & Model Deployment
-
-### Frameworks & Tools
-- Python, PyTorch, TensorFlow
-- LangChain, LlamaIndex
-- Hugging Face Transformers
-- AWS (SageMaker, Bedrock)
-- OpenAI API, Anthropic API
-
-## Repository Structure
-
-```
-ai-portfolio/
-├── site/               # Portfolio website (Next.js static)
-├── projects/           # Project summaries + links
-│   └── 01-arxiv-paper-finder/
-├── learning/           # Courses, papers, experiments
-├── templates/          # Reusable project templates
-├── docs/               # Internal docs + decisions
-└── profile-readme/     # GitHub profile README content
-```
-
-**Strategy:** Flagship projects live in their own repos. This portfolio serves as a curated index with summaries, architecture diagrams, and demo links.
+| Project | Description | Stack | Links |
+|---------|-------------|-------|-------|
+| **ArXiv Scholar AI** | MCP client-server research tool with agentic AI loop, 5 tools, 3 resources, 2 prompt templates | FastMCP, FastAPI, Gradio, Next.js, Gemini, arXiv API | [Live App](https://arxiv-scholar-ai.vercel.app) · [MCP Server](https://huggingface.co/spaces/hirenpurabiya/arxiv-scholar-ai) · [GitHub](https://github.com/hirenpurabiya/arxiv-scholar-ai) |
 
 ## Portfolio Website
 
-**Live:** [hirenpurabiya.com](https://hirenpurabiya.com) *(coming soon)*
+**Live:** [hirenpurabiya.github.io/ai-portfolio](https://hirenpurabiya.github.io/ai-portfolio/)
 
-Built with Next.js (React) static export, hosted on Cloudflare Pages.
+Built with Next.js, React, TypeScript, and Tailwind CSS. Hosted on GitHub Pages.
 
 ## Connect
 
-- [Hugging Face](https://huggingface.co/hirenpurabiya)
 - [LinkedIn](https://linkedin.com/in/hirenpurabiya)
-
----
-
-*Each project includes detailed documentation, architecture diagrams, and live demos where applicable.*
+- [Hugging Face](https://huggingface.co/hirenpurabiya)
+- [GitHub](https://github.com/hirenpurabiya)
