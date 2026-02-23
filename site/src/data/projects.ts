@@ -20,9 +20,9 @@ export const projects: Project[] = [
     number: "01",
     title: "ArXiv Scholar AI",
     tagline:
-      "AI-powered research paper discovery and summarization with a modern full-stack web app.",
+      "MCP client-server research tool: search 2M+ papers, AI summaries, and agentic reasoning -- full MCP protocol over SSE.",
     description:
-      "Search arXiv's database of 2M+ academic papers on any topic and get concise AI-powered summaries using Claude. Features a beautiful Next.js frontend, a Python FastAPI backend, and real-time paper search with direct PDF links.",
+      "An MCP (Model Context Protocol) client-server app built from scratch. The backend exposes 5 MCP tools, 3 resources, and 2 prompt templates via FastMCP. The web agent connects as a real SSE client, discovers tools dynamically, and executes them through the MCP protocol. LLM-agnostic architecture -- currently Gemini free tier, swappable to any LLM.",
     status: "live",
     github: "https://github.com/hirenpurabiya/arxiv-scholar-ai",
     demo: "https://arxiv-scholar-ai.vercel.app",
@@ -33,34 +33,38 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "Python",
       "FastAPI",
+      "FastMCP",
+      "MCP SDK",
+      "SSE-Starlette",
       "Pydantic",
       "Vercel",
       "Render",
     ],
     aiConcepts: [
-      "AI Summarization",
-      "Tool Use / Function Calling",
-      "API Orchestration",
-      "Prompt Engineering",
+      "MCP (Model Context Protocol)",
+      "Agentic AI",
+      "Tool Calling",
+      "SSE Streaming",
+      "Multi-step Reasoning",
     ],
-    llms: ["Anthropic Claude"],
+    llms: ["Google Gemini (LLM-agnostic)"],
     architecture: `flowchart LR
     U[User] --> FE[Next.js Frontend]
-    FE --> API[FastAPI Backend]
-    API --> AX[arXiv API]
-    AX --> PROC[Result Processing]
-    API --> CL[Claude API]
-    CL --> SUM[AI Summary]
-    PROC --> FE
-    SUM --> FE`,
+    FE -->|SSE stream| API[FastAPI Backend]
+    API --> AGENT[MCP Agent]
+    AGENT -->|SSE client| MCP[MCP Server - FastMCP]
+    MCP --> AX[arXiv API]
+    AGENT --> LLM[LLM - Gemini]
+    LLM -->|pick tool| AGENT
+    MCP -->|tool result| AGENT`,
     highlights: [
-      "Search arXiv's 2M+ papers by any topic with smart relevance ranking",
-      "AI-powered summaries using Claude -- concise, readable explanations of complex research",
-      "Direct PDF download links for every paper",
-      "Topic-based organization -- articles saved and grouped for easy revisiting",
-      "Full REST API backend with interactive Swagger documentation",
-      "Modern, responsive UI built with Next.js and Tailwind CSS",
-      "Learning journal documenting CS/AI/ML concepts explained simply",
+      "Full MCP stack -- Server (FastMCP) with 5 tools, 3 resources, 2 prompts; SSE transport",
+      "Real MCP client-server -- agent connects via SSE, discovers tools dynamically, executes through MCP protocol",
+      "Agentic loop -- LLM decides which tools to call, evaluates results, loops up to 10 steps",
+      "Live reasoning UI -- users see tool calls and results streamed in real time via SSE",
+      "LLM-agnostic -- currently Gemini free tier; swappable to Claude, GPT, Llama, Bedrock, or any LLM",
+      "Any MCP client can connect -- Claude Desktop, Cursor, custom agents all work out of the box",
+      "Search arXiv's 2M+ papers with AI summaries and Explain Like I'm 10 mode",
     ],
   },
 ];
