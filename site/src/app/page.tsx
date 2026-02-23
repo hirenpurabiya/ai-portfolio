@@ -238,9 +238,7 @@ export default function Home() {
       <section className="hero-gradient relative pt-32 pb-20 sm:pt-40 sm:pb-28 lg:pt-48 lg:pb-32">
         <div className="w-full mx-auto px-8 lg:px-16 xl:px-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight animate-fade-in-up">
-            Building With
-            <br />
-            <span className="gradient-text">AI</span>
+            Building With <span className="gradient-text">AI</span>
           </h2>
           <p className="text-text-secondary text-lg sm:text-xl leading-relaxed mt-6 animate-fade-in-up animation-delay-200">
             A portfolio of hands-on projects exploring the latest GenAI technologies — MCPs, A2A, Agent Skills, AI Agents, LLMs, RAG, Transformers, and more.
