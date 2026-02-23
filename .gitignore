@@ -22,3 +22,11 @@ Thumbs.db
 .vscode/
 *.swp
 *.swo
+
+# Local notes and drafts (root only, not site/)
+/*.txt
+/*.md
+!README.md
+/*.py
+/*.json
+/docs/PRIVATE_README.md
