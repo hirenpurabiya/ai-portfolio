@@ -7,6 +7,7 @@ export interface Project {
   status: "live" | "in-progress" | "planned";
   github: string;
   demo?: string;
+  huggingface?: string;
   techStack: string[];
   aiConcepts: string[];
   llms: string[];
@@ -26,6 +27,7 @@ export const projects: Project[] = [
     status: "live",
     github: "https://github.com/hirenpurabiya/arxiv-scholar-ai",
     demo: "https://arxiv-scholar-ai.vercel.app",
+    huggingface: "https://huggingface.co/spaces/hirenpurabiya/arxiv-scholar-ai",
     techStack: [
       "Next.js 16",
       "React",

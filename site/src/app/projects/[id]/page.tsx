@@ -103,6 +103,23 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
                 GitHub
               </a>
             )}
+            {project.huggingface && (
+              <a
+                href={project.huggingface}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-1.5 whitespace-nowrap px-3 py-2 rounded-full glass text-xs sm:text-sm hover:border-white/20 transition-all duration-300"
+              >
+                <svg
+                  className="w-3.5 h-3.5 shrink-0"
+                  viewBox="0 0 120 120"
+                  fill="currentColor"
+                >
+                  <path d="M37.2 48.8c-2.8 0-5.2 2.3-5.2 5.2 0 2.8 2.3 5.2 5.2 5.2 2.8 0 5.2-2.3 5.2-5.2-.1-2.9-2.4-5.2-5.2-5.2zm45.6 0c-2.8 0-5.2 2.3-5.2 5.2 0 2.8 2.3 5.2 5.2 5.2 2.8 0 5.2-2.3 5.2-5.2 0-2.9-2.4-5.2-5.2-5.2zM60 0C26.9 0 0 26.9 0 60s26.9 60 60 60 60-26.9 60-60S93.1 0 60 0zm0 108c-26.5 0-48-21.5-48-48S33.5 12 60 12s48 21.5 48 48-21.5 48-48 48zm24.8-42.4c-1.2-.8-2.8-.4-3.6.8-4.8 7.2-12.8 11.6-21.2 11.6s-16.4-4.4-21.2-11.6c-.8-1.2-2.4-1.6-3.6-.8-1.2.8-1.6 2.4-.8 3.6 5.6 8.8 15.6 14 26 14s20-5.2 26-14c.4-1.2 0-2.8-1.6-3.6z" />
+                </svg>
+                MCP Server
+              </a>
+            )}
             {project.demo && (
               <a
                 href={project.demo}
