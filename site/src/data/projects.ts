@@ -23,7 +23,7 @@ export const projects: Project[] = [
     tagline:
       "MCP client-server research tool: search 2M+ papers, AI summaries, and agentic reasoning -- full MCP protocol over SSE.",
     description:
-      "An MCP (Model Context Protocol) client-server app built from scratch. The backend exposes 5 MCP tools, 3 resources, and 2 prompt templates via FastMCP. The web agent connects as a real SSE client, discovers tools dynamically, and executes them through the MCP protocol. LLM-agnostic architecture -- currently Gemini free tier, swappable to any LLM.",
+      "An MCP (Model Context Protocol) client-server app built from scratch. The backend exposes 5 MCP tools, 3 resources, and 2 prompt templates via FastMCP. The web agent connects as a real SSE client, discovers tools dynamically, and executes them through the MCP protocol. Multi-provider LLM architecture -- Gemini primary with automatic OpenAI GPT-4o-mini failover. Truly LLM-agnostic: swap or add any provider.",
     status: "live",
     github: "https://github.com/hirenpurabiya/arxiv-scholar-ai",
     demo: "https://arxiv-scholar-ai.vercel.app",
@@ -52,14 +52,14 @@ export const projects: Project[] = [
       "SSE Streaming",
       "Multi-step Reasoning",
     ],
-    llms: ["Google Gemini (LLM-agnostic)"],
+    llms: ["Google Gemini", "OpenAI GPT-4o-mini", "Multi-provider (LLM-agnostic)"],
     architecture: `flowchart LR
     U[User] --> FE[Next.js Frontend]
     FE -->|SSE stream| API[FastAPI Backend]
     API --> AGENT[MCP Agent]
     AGENT -->|SSE client| MCP[MCP Server - FastMCP]
     MCP --> AX[arXiv API]
-    AGENT --> LLM[LLM - Gemini]
+    AGENT --> LLM[LLM - Gemini / OpenAI]
     LLM -->|pick tool| AGENT
     MCP -->|tool result| AGENT`,
     highlights: [
@@ -67,9 +67,9 @@ export const projects: Project[] = [
       "Real MCP client-server -- agent connects via SSE, discovers tools dynamically, executes through MCP protocol",
       "Agentic loop -- LLM decides which tools to call, evaluates results, loops up to 10 steps",
       "Prompt engineering -- system instruction forces tool usage; MCP prompt templates discoverable by any client",
-      "Production resilience -- retry with backoff on rate limits, rate limit detection, arXiv retry with exponential delay",
+      "Production resilience -- multi-provider failover (Gemini → OpenAI), retry with backoff, rate limit detection, arXiv retry with exponential delay",
       "Live reasoning UI -- users see tool calls and results streamed in real time via SSE",
-      "LLM-agnostic -- currently Gemini free tier; swappable to Claude, GPT, Llama, Bedrock, or any LLM",
+      "Multi-provider LLM -- Gemini primary + OpenAI GPT-4o-mini failover; architecture supports any LLM provider",
       "Any MCP client can connect -- Claude Desktop, Cursor, custom agents all work out of the box",
       "Deployed on 3 platforms -- Vercel (frontend), Render (backend), Hugging Face (MCP server with Gradio UI)",
       "Search arXiv's 2M+ papers with AI summaries and Explain Like I'm 10 mode",
