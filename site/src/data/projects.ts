@@ -75,4 +75,55 @@ export const projects: Project[] = [
       "Search arXiv's 2M+ papers with AI summaries and Explain Like I'm 10 mode",
     ],
   },
+  {
+    id: "nim-arena",
+    number: "02",
+    title: "NIM Arena",
+    tagline:
+      "Compare NVIDIA NIM models side-by-side with real-time latency, token count, and throughput metrics.",
+    description:
+      "A multi-model comparison tool powered by NVIDIA NIM inference microservices. Select 2-3 models from NVIDIA's NIM catalog, enter any prompt, and see responses side-by-side with latency, token count, and tokens/sec metrics. Demonstrates NVIDIA NIM adoption, model evaluation workflows, and the OpenAI-compatible API that makes NIM a drop-in replacement for any LLM backend.",
+    status: "live",
+    github: "https://github.com/hirenpurabiya/nim-arena",
+    huggingface: "https://huggingface.co/spaces/hirenpurabiya/nim-arena",
+    techStack: [
+      "Python",
+      "Gradio",
+      "NVIDIA NIM",
+      "OpenAI SDK",
+      "Hugging Face Spaces",
+    ],
+    aiConcepts: [
+      "NVIDIA NIM",
+      "Model Comparison",
+      "Inference Optimization",
+      "LLM Evaluation",
+      "Rate Limiting & Security",
+    ],
+    llms: [
+      "Llama 3.3 Nemotron Super 49B (NIM)",
+      "Nemotron Nano 8B (NIM)",
+      "DeepSeek R1 671B MoE (NIM)",
+      "Llama 3.1 8B Instruct (NIM)",
+      "DeepSeek R1 Distill Llama 70B (NIM)",
+    ],
+    architecture: `flowchart LR
+    U[User] --> UI[Gradio UI]
+    UI --> NIM[NVIDIA NIM API]
+    NIM --> MA[Model A]
+    NIM --> MB[Model B]
+    NIM --> MC[Model C]
+    MA --> R[Side-by-Side Results + Metrics]
+    MB --> R
+    MC --> R`,
+    highlights: [
+      "Powered by NVIDIA NIM inference microservices via integrate.api.nvidia.com",
+      "Side-by-side comparison of up to 3 NVIDIA-hosted models on the same prompt",
+      "Real-time metrics: latency, output token count, and tokens/sec per model",
+      "5 models: Nemotron Super 49B, Nemotron Nano 8B, DeepSeek R1, Llama 3.1 8B, DeepSeek R1 Distill 70B",
+      "OpenAI-compatible API -- demonstrates NIM's drop-in replacement capability",
+      "Security hardened: rate limiting (30 req/hr), prompt length cap, token output cap, input sanitization",
+      "Deployed on Hugging Face Spaces with Gradio",
+    ],
+  },
 ];
