@@ -101,11 +101,14 @@ export const projects: Project[] = [
       "Rate Limiting & Security",
     ],
     llms: [
-      "Llama 3.3 Nemotron Super 49B (NIM)",
+      "Mistral 7B Instruct (NIM)",
+      "DeepSeek R1 Distill Qwen 7B (NIM)",
       "Nemotron Nano 8B (NIM)",
-      "DeepSeek R1 671B MoE (NIM)",
       "Llama 3.1 8B Instruct (NIM)",
-      "DeepSeek R1 Distill Llama 70B (NIM)",
+      "DeepSeek R1 Distill Llama 8B (NIM)",
+      "DeepSeek R1 Distill Qwen 14B (NIM)",
+      "Llama 3.3 Nemotron Super 49B (NIM)",
+      "Llama 3.3 70B Instruct (NIM)",
     ],
     architecture: `flowchart LR
     U[User] --> UI[Gradio UI]
@@ -120,7 +123,7 @@ export const projects: Project[] = [
       "Powered by NVIDIA NIM inference microservices via integrate.api.nvidia.com",
       "Side-by-side comparison of up to 3 NVIDIA-hosted models on the same prompt",
       "Real-time metrics: latency, output token count, and tokens/sec per model",
-      "5 models: Nemotron Super 49B, Nemotron Nano 8B, DeepSeek R1, Llama 3.1 8B, DeepSeek R1 Distill 70B",
+      "8 models across 4 providers (NVIDIA, Meta, Mistral, DeepSeek) from 7B to 70B parameters",
       "OpenAI-compatible API -- demonstrates NIM's drop-in replacement capability",
       "Security hardened: rate limiting (30 req/hr), prompt length cap, token output cap, input sanitization",
       "Deployed on Hugging Face Spaces with Gradio",
