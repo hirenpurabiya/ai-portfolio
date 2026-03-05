@@ -7,6 +7,7 @@ A portfolio of AI projects demonstrating expertise in MCP (Model Context Protoco
 | Project | Description | Stack | Links |
 |---------|-------------|-------|-------|
 | **ArXiv Scholar AI** | MCP client-server research tool with agentic AI loop, 5 tools, 3 resources, 2 prompt templates | FastMCP, FastAPI, Gradio, Next.js, Gemini, arXiv API | [Live App](https://arxiv-scholar-ai.vercel.app) · [MCP Server](https://huggingface.co/spaces/hirenpurabiya/arxiv-scholar-ai) · [GitHub](https://github.com/hirenpurabiya/arxiv-scholar-ai) |
+| **NIM Arena** | Compare 7 LLMs side-by-side across 4 providers (NVIDIA, Meta, Mistral, DeepSeek) from 7B to 70B parameters with chain-of-thought reasoning | NVIDIA NIM, Gradio, Python, OpenAI SDK | [Live App](https://huggingface.co/spaces/hirenpurabiya/nim-arena) · [GitHub](https://github.com/hirenpurabiya/nim-arena) |
 
 ## Portfolio Website
 
