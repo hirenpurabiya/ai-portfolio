@@ -27,6 +27,21 @@ export const metadata: Metadata = {
     description:
       "A curated collection of AI projects in LLMs, RAG, AI Agents, and enterprise AI.",
     type: "website",
+    images: [
+      {
+        url: "https://hirenpurabiya.github.io/ai-portfolio/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Hiren Purabiya — AI Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hiren Purabiya | AI Portfolio",
+    description:
+      "A curated collection of AI projects in LLMs, RAG, AI Agents, and enterprise AI.",
+    images: ["https://hirenpurabiya.github.io/ai-portfolio/og-image.png"],
   },
 };
 
