@@ -128,4 +128,56 @@ export const projects: Project[] = [
       "Deployed on Hugging Face Spaces with Gradio",
     ],
   },
+  {
+    id: "agentic-article-writer",
+    number: "03",
+    title: "Agentic Article Writer",
+    tagline:
+      "Multi-agent AI writing assistant: five LangGraph agents plan, research, write, review, and revise articles with human-in-the-loop controls.",
+    description:
+      "A multi-agent writing pipeline built with LangGraph's StateGraph. Five specialized agents collaborate through conditional routing: Planner creates outlines, Researcher searches the web via Tavily, Writer drafts using research, Reviewer critiques and scores, Reviser improves based on feedback. Features human-in-the-loop interrupt controls, session persistence with thread and step selection, and real-time agent execution logging.",
+    status: "live",
+    github: "https://github.com/hirenpurabiya/agentic-article-writer",
+    huggingface: "https://huggingface.co/spaces/hirenpurabiya/agentic-article-writer",
+    techStack: [
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "Gradio",
+      "Tavily",
+      "Pydantic",
+      "Hugging Face Spaces",
+    ],
+    aiConcepts: [
+      "Multi-Agent Systems",
+      "LangGraph StateGraph",
+      "Conditional Routing",
+      "Human-in-the-Loop",
+      "Agentic Search",
+      "State Management",
+      "Checkpointing & Persistence",
+      "Self-Reflection",
+    ],
+    llms: ["Google Gemini 2.5 Flash"],
+    architecture: `flowchart LR
+    U[User] --> UI[Gradio UI]
+    UI --> P[Planner Agent]
+    P --> R[Researcher Agent]
+    R -->|Tavily Search| WEB[Web Sources]
+    R --> W[Writer Agent]
+    W --> REV[Reviewer Agent]
+    REV -->|PASS| DONE[Final Article]
+    REV -->|REVISE| RV[Reviser Agent]
+    RV --> W`,
+    highlights: [
+      "5-agent LangGraph pipeline: Planner, Researcher, Writer, Reviewer, Reviser with conditional edges",
+      "Human-in-the-loop: interrupt after any node, review state, then continue",
+      "Agentic web research via Tavily with structured query generation",
+      "Session persistence: switch between threads and rewind to any checkpoint step",
+      "Self-reflection loop: Reviewer critiques drafts, Reviser improves until PASS or max revisions",
+      "Real-time agent execution log showing each node's progress and timing",
+      "Google Gemini 2.5 Flash as primary LLM with retry and rate limit handling",
+      "Deployed on Hugging Face Spaces with Gradio",
+    ],
+  },
 ];
