@@ -175,18 +175,19 @@ export default async function ProjectPage({ params }: { params: Promise<{ id: st
       <div className="w-full max-w-full mx-auto px-4 sm:px-8 lg:px-16 xl:px-24 py-12 min-w-0">
         {/* Architecture */}
         <SectionCard title="Architecture">
-          {project.architectureImage && (
-            <div className="flex justify-center mb-6">
+          {project.architectureImage ? (
+            <div className="flex justify-center">
               <img
                 src={project.architectureImage}
                 alt={`${project.title} Architecture`}
                 className="max-h-96 rounded-lg"
               />
             </div>
+          ) : (
+            <pre className="text-sm text-text-secondary font-mono overflow-x-auto leading-relaxed">
+              <code>{project.architecture}</code>
+            </pre>
           )}
-          <pre className="text-sm text-text-secondary font-mono overflow-x-auto leading-relaxed">
-            <code>{project.architecture}</code>
-          </pre>
         </SectionCard>
 
         {/* Tech Stack + AI Concepts + LLMs in a grid */}
