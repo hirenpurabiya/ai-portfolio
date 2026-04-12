@@ -158,7 +158,7 @@ export const projects: Project[] = [
       "Checkpointing & Persistence",
       "Self-Reflection",
     ],
-    llms: ["Google Gemini 2.5 Flash"],
+    llms: ["Model agnostic (currently Gemini 2.5 Flash)"],
     architecture: `flowchart LR
     U[User] --> UI[Gradio UI]
     UI --> P[Planner Agent]
@@ -176,7 +176,7 @@ export const projects: Project[] = [
       "Session persistence: switch between threads and rewind to any checkpoint step",
       "Self-reflection loop: Reviewer critiques drafts, Reviser improves until PASS or max revisions",
       "Real-time agent execution log showing each node's progress and timing",
-      "Google Gemini 2.5 Flash as primary LLM with retry and rate limit handling",
+      "Model agnostic LLM layer with retry and rate limit handling (swap in any provider)",
       "Deployed on Hugging Face Spaces with Gradio",
     ],
   },
