@@ -170,7 +170,7 @@ export const projects: Project[] = [
     REV -->|PASS| DONE[Final Article]
     REV -->|REVISE| RV[Reviser Agent]
     RV --> W`,
-    architectureImage: "/images/projects/agentic-article-writer-graph.png",
+    architectureImage: "/ai-portfolio/images/projects/agentic-article-writer-graph.png",
     highlights: [
       "5-agent LangGraph pipeline: Planner, Researcher, Writer, Reviewer, Reviser with conditional edges",
       "Human-in-the-loop: interrupt after any node, review state, then continue",
