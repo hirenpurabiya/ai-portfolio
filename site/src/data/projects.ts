@@ -182,4 +182,60 @@ export const projects: Project[] = [
       "Deployed on Hugging Face Spaces with Gradio",
     ],
   },
+  {
+    id: "agentic-financial-assistant",
+    number: "04",
+    title: "Agentic Financial Assistant",
+    tagline:
+      "Multi-agent conversational AI for financial queries. LangGraph orchestrator dispatches Market, Research, and Advisory agents in parallel with RAG over a curated financial knowledge base.",
+    description:
+      "A conversational multi-agent system built on LangGraph. The Orchestrator classifies every query with Pydantic structured output and dispatches zero or more specialized agents in parallel via Send(). The Market Agent pulls live stock data from yfinance, the Research Agent queries live web news via Tavily, and the Advisory Agent runs RAG over a curated financial education corpus in ChromaDB. The Synthesizer merges parallel outputs into a single coherent answer. MemorySaver checkpoints keep conversation state per thread. Every piece of data is real: zero synthetic content, zero fake portfolios.",
+    status: "live",
+    github: "https://github.com/hirenpurabiya/agentic-financial-assistant",
+    huggingface: "https://huggingface.co/spaces/hirenpurabiya/agentic-financial-assistant",
+    techStack: [
+      "Python",
+      "LangGraph",
+      "LangChain",
+      "ChromaDB",
+      "Google Gemini",
+      "yfinance",
+      "Tavily",
+      "Gradio",
+      "Pydantic",
+      "Hugging Face Spaces",
+    ],
+    aiConcepts: [
+      "Multi-Agent Systems",
+      "Hierarchical Delegation",
+      "Parallel Agent Execution (Send)",
+      "RAG (Retrieval Augmented Generation)",
+      "Vector Embeddings",
+      "Tool Calling",
+      "Structured Output",
+      "Conversation Memory",
+    ],
+    llms: ["Google Gemini 2.5 Flash", "Google gemini-embedding-001", "Model agnostic architecture"],
+    architecture: `flowchart TD
+    U[User Query] --> O{Orchestrator}
+    O -. Send .-> M[Market Agent - yfinance]
+    O -. Send .-> R[Research Agent - Tavily]
+    O -. Send .-> A[Advisory Agent - ChromaDB RAG]
+    M --> S{Synthesizer}
+    R --> S
+    A --> S
+    S --> F[Final Answer]`,
+    architectureImage: "/ai-portfolio/images/projects/agentic-financial-assistant-graph.png",
+    highlights: [
+      "Hierarchical delegation: Orchestrator classifies queries and routes to specialized agents",
+      "Parallel agent execution via LangGraph Send() for queries that need multiple agents",
+      "RAG over 16 curated financial education entries embedded with Google gemini-embedding-001 in ChromaDB",
+      "All data is real: live stock prices via yfinance, live web news via Tavily, curated educational corpus we authored",
+      "Structured output via Pydantic models for deterministic query routing",
+      "Tool calling: each agent decides which tools to invoke at runtime",
+      "Conversation memory via MemorySaver checkpointing per thread",
+      "Model agnostic architecture: swap the LLM and embedding wrappers to use OpenAI, Anthropic, or AWS Bedrock",
+      "Deployed on Hugging Face Spaces with Gradio",
+    ],
+  },
 ];
