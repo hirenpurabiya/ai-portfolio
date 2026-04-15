@@ -187,9 +187,9 @@ export const projects: Project[] = [
     number: "04",
     title: "Agentic Financial Assistant",
     tagline:
-      "Multi-agent conversational AI for financial queries. LangGraph orchestrator dispatches Market, Research, and Advisory agents in parallel with RAG over a curated financial knowledge base.",
+      "Multi-agent conversational AI for financial queries. LangGraph orchestrator dispatches Market, Research, and Advisory agents in parallel with RAG over a curated financial knowledge base. Works in both text and voice.",
     description:
-      "A conversational multi-agent system built on LangGraph. The Orchestrator classifies every query with Pydantic structured output and dispatches zero or more specialized agents in parallel via Send(). The Market Agent pulls live stock data from yfinance, the Research Agent queries live web news via Tavily, and the Advisory Agent runs RAG over a curated financial education corpus in ChromaDB. The Synthesizer merges parallel outputs into a single coherent answer. MemorySaver checkpoints keep conversation state per thread. Every piece of data is real: zero synthetic content, zero fake portfolios.",
+      "A conversational multi-agent system built on LangGraph. The Orchestrator classifies every query with Pydantic structured output and dispatches zero or more specialized agents in parallel via Send(). The Market Agent pulls live stock data from yfinance, the Research Agent queries live web news via Tavily, and the Advisory Agent runs RAG over a curated financial education corpus in ChromaDB. The Synthesizer merges parallel outputs into a single coherent answer. MemorySaver checkpoints keep conversation state per thread. Every piece of data is real: zero synthetic content, zero fake portfolios. A voice layer, built on Gemini 2.5 Flash for STT and TTS with the Kore voice, is integrated into the same chat surface so users can ask questions by typing or by speaking.",
     status: "live",
     github: "https://github.com/hirenpurabiya/agentic-financial-assistant",
     huggingface: "https://huggingface.co/spaces/hirenpurabiya/agentic-financial-assistant",
@@ -204,6 +204,7 @@ export const projects: Project[] = [
       "Gradio",
       "Pydantic",
       "Hugging Face Spaces",
+      "Gemini 2.5 Flash (STT + TTS)",
     ],
     aiConcepts: [
       "Multi-Agent Systems",
@@ -214,8 +215,14 @@ export const projects: Project[] = [
       "Tool Calling",
       "Structured Output",
       "Conversation Memory",
+      "Voice (STT + TTS)",
     ],
-    llms: ["Google Gemini 2.5 Flash", "Google gemini-embedding-001", "Model agnostic architecture"],
+    llms: [
+      "Google Gemini 2.5 Flash",
+      "Google gemini-embedding-001",
+      "Google gemini-2.5-flash-preview-tts (Kore voice)",
+      "Model agnostic architecture",
+    ],
     architecture: `flowchart TD
     U[User Query] --> O{Orchestrator}
     O -. Send .-> M[Market Agent - yfinance]
@@ -234,7 +241,9 @@ export const projects: Project[] = [
       "Structured output via Pydantic models for deterministic query routing",
       "Tool calling: each agent decides which tools to invoke at runtime",
       "Conversation memory via MemorySaver checkpointing per thread",
-      "Model agnostic architecture: swap the LLM and embedding wrappers to use OpenAI, Anthropic, or AWS Bedrock",
+      "Voice layer: record up to 5 seconds in the same Chat tab, Gemini transcribes, the agents answer, Gemini synthesizes the reply in the Kore voice",
+      "Dark and light mode aware UI with full width responsive layout",
+      "Model agnostic architecture: swap the LLM and embedding wrappers to use OpenAI, Anthropic, or AWS Bedrock; swap the voice layer to Amazon Transcribe and Polly or OpenAI Whisper and TTS",
       "Deployed on Hugging Face Spaces with Gradio",
     ],
   },
